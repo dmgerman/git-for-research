@@ -3,7 +3,7 @@
 #+TAGS:
 #+SEQ_TODO: TODO STARTED DONE DEFERRED CANCELLED | WAITING DELEGATED APPT
 #+DRAWERS: HIDDEN STATE
-#+TITLE: Git for researchers
+#+TITLE: A Researcher's Guide for Collaborating with Git
 #+CATEGORY: 
 #+PROPERTY: header-args:sql             :engine postgresql  :exports both :cmdline csc370
 #+PROPERTY: header-args:sqlite          :db /path/to/db  :colnames yes
@@ -14,118 +14,115 @@
 
 * Introduction
 
-Git is an excellent way to collaborate but it manages data in a different way than other version control systems,
-specially subversion. In git you have to clone the entire repository any time you want to make a change. In contrast,
-subversion (and CVS) allowed you to simply download a subtree of the repo.
+Git is an excellent way to collaborate but it manages data in a different way than other version control systems, specially subversion. In Git you have to clone the entire repository any time you want to make a change. In contrast, subversion (and CVS) allowed you to simply download a subtree of the repo.
 
-These are a set of recommendations on how to use git (and potentially github/bitkeeper/gitorious) to manage your
-research repositories.
+Below are a set of recommendations on how to use Git (and potentially GitHub/BitKeeper/Gitorious) to collaborate with others and manage your research repositories.
 
 
 * On organization
 
 The key is to think of one repository for each major collaboration tasks. My suggestion is that every paper should have 3 repositories:
 
-1. The actual paper, including all the figures that it needs. 
-2. A data repository, where the data analysis scripts is held
+1. The actual paper, including all the figures that it needs
+2. A data repository, where the data collection and analysis scripts are held
 3. A replication package. This repo will contain the data that will be shared for replication
 
-I also keep a repo for each of the students. This repo is used before we decide a paper as the means to exchange information.
+I also keep a repo for each of the students. This repo is used before deciding on a venue as the means to exchange information.
 
 
 * Where to store the master repositories
 
-Depending on your constraints you might want to one of the main git hosting sites, such as github or bitkeeper. You can
-also keep the master repositories in a machine accessible via ssh, but administration becomes more difficult. It depends
-on your constraints. Specifically:
+Depending on your constraints you might want to choose one of the main Git hosting sites, such as GitHub or BitKeeper. You can also keep the master repositories in a machine accessible via ssh, but administration becomes more difficult. Specifically, consider the following:
 
 1. Easiness to browse repos and their content
 2. Permissions per repo 
    - Do different repos have different people who can modify/browse them?
    - Should different people be able to administer repos (rename, create, delete)?
 3. Are you ok with a service hosting your repos?
+4. Would the other co-authors have access to the repo?
 
-Git hosting sites support "organizations". I recommend the creation of an organization for a lab, where all the papers
-are expected to be hosted (eventually). But every hosting service has different constraints with respect to permissions,
-number of repos you can have, etc. 
+Git hosting sites support "organizations". I recommend to create an organization for the lab, where all the expected papers are to be hosted (eventually) and archived. Every hosting service has different constraints with respect to permissions, number of repos you can have, etc. 
 
-I also recommend you apply for an academic account for your lab with the hosting service of your preference.
+I also recommend to apply for an academic account for your lab with the hosting service of your preference. Students should still apply for a student account as well (e.g., allows to have unlimited private repos).
 
 * Permissions
 
-See above. I recommend you explore how each hosting site handles permissions. I believe bitkeeper is a bit better on
-this that github. But things might have changed recently (in the last year).
+See above. I recommend you explore how each hosting site handles permissions. I believe BitKeeper is a bit better on this that GitHub. But things might have changed recently (in the last year).
 
 
-* How to name the repos
+* How to name a repo
 
 Here are some things you should consider:
 
 - You will have many repos
-- You will probably try to find the repos by conference/journal, title and year. I strongly recommend these three
-  "tokens" in the title of a repo
+- You will probably try to find the repos by conference/journal, title and year. I strongly recommend these three "tokens" in the title of a repo
 
-I personally prefer to name my repos as "YYYY_conference-name_title-of-the-paper<type>". The <type> can be empty,
-_paper, or _replication. This way the paper appears first, and the other two repos after. 
+I personally prefer to name my repos as "YYYY_conference-name_title-of-the-paper<type>". The <type> can be empty, _paper, or _replication. This way the paper appears first, and the other two repos after. 
 
 * How to start a paper
 
-I let my students start the repos. Once we move to a collaborative mode, I might move the repo into the organization
-account (git hosting sites let you change ownership and move repositories accross accounts very easily). It is at the
-moment that the repo is moved that it is renamed.
+I let my students start the repos. Once we move to a collaborative mode, I might move the repo into the organization account (Git hosting sites let you change ownership and move repositories across accounts very easily). Typically, it is at that moment that the moved repo is renamed.
+
+* Authorship
+
+Authorship (who and in what order) should be discussed early on, as it dictates the expectations and responsibilities from the authors. The first author is expected to lead the paper, and "push" it towards publishing. However, all authors hold a responsibility. For example,
+
+> Anyone listed as Author on an ACM paper must meet all the following criteria:
+>
+> - they have made substantial intellectual contributions to some components of the original work described in the paper; and
+> - they have participated in drafting and/or revision of the paper; and
+> - they are aware that the paper has been submitted for publication; and
+> - they agree to be held accountable for any issues relating to correctness or integrity of the work.
+
+* Writing the paper
+
+All data should be [[http://vita.had.co.nz/papers/tidy-data.pdf][tidy]]. Data should be saved by default in a transparent, open format like CSV (some exceptions may exist).
+
+We use Latex to write papers, with bibliographies in bibtex. Typically, we do the analysis with R and save the scripts to allow for replication later.
+
+When starting to write, consider using Google docs first to flesh out the outline and make sure that the relevant collaborators have agreed on some aspects of it before you flesh it out into a full document --- Google docs allows brainstorming and easy inline commenting, which can save a lot of time later and lead to more organized manuscript.
+
+If revising a paper following a peer review process, the first thing you should do is paste the reviews into GitHub issue and break it up into specific and actionable comments. These comments serve as a "to do list" for the revision.
 
 * Archiving the repos
 
-Different git hosting sites show the repos you have in an account in different ways. Github lists them in order of
-activity (the most recently modified first). Bitkeeper in lexicographical order. Nonetheless, after a while you will
-have lots of repositories. 
+Different Git hosting sites show the repos you have in an account in different ways. GitHub lists them in order of activity (the most recently modified first). BitKeeper in lexicographical order. Nonetheless, after a while you will end up with lots of repositories. 
 
-If you are worried about this, I recommend creating an archival area. Once the paper is published, move the repos from
-the collaborative repo to the archival one. Note that this might mess permissions of others who want to access the repo.
+If you are worried about this, I recommend creating an archival area. Once the paper is published, move the repos from the collaborative repo to the archival one. Note that this might mess permissions of others who want to access the repo. Alternatively, you can organize these in "ongoing papers" and "archived papers" locally without affecting the co-authors (e.g., moving and renaming the repo main folder).
 
 * Replication repos
 
-Once you are creating the camera ready version of the paper, you can make the replication package public. This is simply
-flipping a switch. I find it convenient. I also recommend that, after you are sure about the replication data you:
+Once you are creating the camera ready version of the paper, you can make the replication package public. This is simply flipping a switch. I find it convenient. I also recommend that, after you are sure about the replication data you:
 
 - create a tag (e.g. published)
-- create a zip file (you can use github to do this)
+- create a zip file (you can use GitHub to do this)
+- test files for completeness
 - submit the file to Zenodo for long term archival http://zenodo.org
 - add a link to both locations in your paper
 
 * Synchronizing/backing up repos locally
 
-- You can script the synchronization of local repos to the outside repos. 
+You can automate (i.e., script) the synchronization of local repos to the outside repos. 
 
-This script, for example, backups all the repos of an organization. You will have to create an ssh account without
-password that can read all the repos, so be careful about how you store these credentials.
+This script, for example, will backup all the repos of an organization. You will have to create an ssh account without password that can read all the repos, so be careful about how you store these credentials.
 
 https://gist.github.com/rodw/3073987
 
-You can also use mr. It is a great package to work with a large number of repos, but it requires that you keep the
-config file up-to-date. Mr is more useful for users who want to keep a large number of repos synced in their computers.
+You can also use mr. It is a great package to work with a large number of repos, but it requires that you keep the config file up-to-date. Mr is more useful for users who want to keep a large number of repos synced in their computers.
 
 * Large files and sensitive information
 
-- If you commit a large file, even if you remove it later, the file is still in the history of the project and it will
-  continue to take the space.
-- The same happens if you commit sensitive information. Even if you remove the file, its history will allow its recovery
-  by anybody who can clone the repo.
+- If you commit a large file, even if you remove it later, the file is still in the history of the project and it will continue to take the space.
+- The same happens if you commit sensitive information. Even if you remove the file, its history will allow its recovery by anybody who can clone the repo.
 
-If you commit any of these files, use bfg (https://rtyley.github.io/bfg-repo-cleaner/) to scrub everything about these
-files.
+If you commit any of these files, use bfg (https://rtyley.github.io/bfg-repo-cleaner/) to scrub everything about these files.
 
 * Storing large files
 
-- Do not store large files in git. It will make it a pain to clone/synchronize the repo to others.  The problem of large
-  files is that version control was not meant for them. 
-
+- Do not store large files in Git. It will make it a pain to clone/synchronize the repo to others.  The problem of large files is that version control was not meant for it. 
 - If you want to save a backup, use the "data" repo of the paper, compress it and then commit it.
   
 
 * Warnings
 
-- Anybody can update history of repos. It is possible that somebody might completely delete all the history of a repo
-  and all its files. But if you have a copy of the repo, you have a full backup of the repo.
-
-- 
+- Anybody can update history of repos. It is possible that somebody might completely delete all the history of a repo and all its files. But if you have a copy of the repo, you have a full backup of the repo.
