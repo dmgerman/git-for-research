@@ -57,7 +57,7 @@ Here are some things you should consider:
 - You will have many repos
 - You will probably try to find the repos by conference/journal, title and year. I strongly recommend these three "tokens" in the title of a repo
 
-I personally prefer to name my repos as "YYYY_conference-name_title-of-the-paper<type>". The <type> can be empty, _paper, or _replication. This way the paper appears first, and the other two repos after. 
+I personally prefer to name my repos as ~YYYY_conference-name_title-of-the-paper<type>~. The ~<type>~ can be empty, ~_paper~, or ~_replication~. This way the paper appears first, and the other two repos after. 
 
 * How to start a paper
 
@@ -67,12 +67,14 @@ I let my students start the repos. Once we move to a collaborative mode, I might
 
 Authorship (who and in what order) should be discussed early on, as it dictates the expectations and responsibilities from the authors. The first author is expected to lead the paper, and "push" it towards publishing. However, all authors hold a responsibility. For example,
 
-> Anyone listed as Author on an ACM paper must meet all the following criteria:
->
-> - they have made substantial intellectual contributions to some components of the original work described in the paper; and
-> - they have participated in drafting and/or revision of the paper; and
-> - they are aware that the paper has been submitted for publication; and
-> - they agree to be held accountable for any issues relating to correctness or integrity of the work.
+#+BEGIN_QUOTE
+Anyone listed as Author on an ACM paper must meet all the following criteria:
+
+- they have made substantial intellectual contributions to some components of the original work described in the paper; and
+- they have participated in drafting and/or revision of the paper; and
+- they are aware that the paper has been submitted for publication; and
+- they agree to be held accountable for any issues relating to correctness or integrity of the work.
+#+END_QUOTE
 
 * Writing the paper
 
