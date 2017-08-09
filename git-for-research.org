@@ -80,7 +80,7 @@ Anyone listed as Author on an ACM paper must meet all the following criteria:
 
 All data should be [[http://vita.had.co.nz/papers/tidy-data.pdf][tidy]]. Data should be saved by default in a transparent, open format like CSV (some exceptions may exist).
 
-We use Latex to write papers, with bibliographies in bibtex. Typically, we do the analysis with R and save the scripts to allow for replication later.
+We use Latex to write papers, with bibliographies in bibtex. Typically, we do the analysis with R and save the scripts to allow for replication later. Diomidis Spinellis provides [[https://github.com/dspinellis/latex-advice][great advice on writing Latex documents]].
 
 When starting to write, consider using Google docs first to flesh out the outline and make sure that the relevant collaborators have agreed on some aspects of it before you flesh it out into a full document --- Google docs allows brainstorming and easy inline commenting, which can save a lot of time later and lead to more organized manuscript.
 
